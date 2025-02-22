@@ -1,0 +1,244 @@
+.products-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  background: #ffffff;
+}
+
+h1 {
+  text-align: center;
+  color: #1a1a1a;
+  margin-bottom: 50px;
+  font-size: 2.5em;
+  font-weight: 600;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+h1::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background: linear-gradient(90deg, #ff4d4d, #f9cb28);
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 40px;
+  padding: 20px;
+}
+
+.product-card {
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.product-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+}
+
+.image-gallery {
+  position: relative;
+  height: 300px;
+  overflow: hidden;
+  background: #f8f8f8;
+}
+
+.product-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.5s ease;
+}
+
+.gallery-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  color: #333;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-nav:hover {
+  background: #ffffff;
+  color: #ff4d4d;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.prev {
+  left: 15px;
+}
+
+.next {
+  right: 15px;
+}
+
+.product-info {
+  padding: 25px;
+}
+
+h2 {
+  margin: 0 0 15px;
+  font-size: 1.4em;
+  color: #1a1a1a;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.description {
+  color: #666;
+  margin-bottom: 20px;
+  font-size: 0.95em;
+  line-height: 1.5;
+}
+
+.price {
+  font-size: 1.6em;
+  color: #ff4d4d;
+  font-weight: 700;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.price::before {
+  content: "₸";
+  font-size: 0.7em;
+  font-weight: 500;
+}
+
+.rating {
+  color: #f9cb28;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.star {
+  font-size: 1.2em;
+}
+
+.category-tag {
+  display: inline-block;
+  padding: 8px 16px;
+  background: linear-gradient(45deg, #ff4d4d, #f9cb28);
+  border-radius: 20px;
+  font-size: 0.85em;
+  color: white;
+  font-weight: 500;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.kaspi-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  background: #ff4d4d;
+  color: white;
+  text-decoration: none;
+  border-radius: 12px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.kaspi-link:hover {
+  background: #ff3333;
+  transform: translateY(-2px);
+}
+
+.share-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.share-btn {
+  padding: 10px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 0.9em;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.whatsapp {
+  background: #25d366;
+  color: white;
+}
+
+.whatsapp:hover {
+  background: #128c7e;
+  transform: translateY(-2px);
+}
+
+.telegram {
+  background: #0088cc;
+  color: white;
+}
+
+.telegram:hover {
+  background: #0077b5;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .products-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 10px;
+  }
+
+  .product-card {
+    max-width: 100%;
+  }
+
+  .image-gallery {
+    height: 250px;
+  }
+
+  h1 {
+    font-size: 2em;
+    margin-bottom: 30px;
+  }
+}
