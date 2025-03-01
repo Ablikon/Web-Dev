@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Login</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="main-nav">
+        <button onclick="location.href='index.html'" class="nav-btn">Home</button>
+        <button onclick="location.href='facebook.html'" class="nav-btn">Facebook Login</button>
+        <button onclick="location.href='microsoft.html'" class="nav-btn">Microsoft Homepage</button>
+    </nav>
+
+    <div class="instagram-container">
+        <img src="https://www.instagram.com/static/images/web/logged_out_wordmark.png/7a252de00b20.png" alt="Instagram" class="instagram-logo">
+        <div class="instagram-form">
+            <form>
+                <input type="text" class="form-input" placeholder="Телефон, имя пользователя или эл. адрес">
+                <input type="password" class="form-input" placeholder="Пароль">
+                <button type="submit" class="form-button instagram-login">Войти</button>
+                <div class="divider">
+                    <span>или</span>
+                </div>
+                <button type="button" class="form-button" style="background: transparent; color: #385185;">
+                    
+                    Войти через Facebook
+                </button>
+                <a href="#" class="forgot-password">Забыли пароль?</a>
+            </form>
+        </div>
+        <div style="background: white; padding: 20px; margin-top: 10px; border: 1px solid #dbdbdb;">
+            <p>У вас еще нет аккаунта? <a href="#" style="color: #0095f6; text-decoration: none; font-weight: 600;">Зарегистрироваться</a></p>
+        </div>
+        <div style="margin-top: 20px; text-align: center;">
+            <p>Установите приложение</p>
+            <div style="display: flex; gap: 10px; justify-content: center; margin-top: 20px;">
+                <img src="https://www.instagram.com/static/images/appstore-install-badges/badge_ios_russian-ru.png/bfba6d0fd6bd.png" alt="Download on App Store" style="height: 40px;">
+                <img src="https://www.instagram.com/static/images/appstore-install-badges/badge_android_russian-ru.png/4c70948c09f3.png" alt="Get it on Google Play" style="height: 40px;">
+            </div>
+        </div>
+    </div>
+</body>
+</html> 
