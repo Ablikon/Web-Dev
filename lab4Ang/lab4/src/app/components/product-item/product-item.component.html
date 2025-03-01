@@ -1,0 +1,35 @@
+<div class="product-card">
+  <div class="product-image">
+    <img [src]="product.images[0]" alt="{{ product.name }}">
+  </div>
+  <div class="product-info">
+    <h3>{{ product.name }}</h3>
+    <p class="description">{{ product.description }}</p>
+    <p class="price">{{ product.price | currency:'₸ ' }}</p>
+    <div class="rating">
+      <span *ngFor="let star of getRatingStars(product.rating)">{{ star }}</span>
+    </div>
+    <div class="likes">
+      <span>❤️ {{ product.likes }} likes</span>
+      <button (click)="likeProduct()" class="like-btn">
+        Like
+      </button>
+    </div>
+    <div class="actions">
+      <a [href]="product.kaspiLink" target="_blank" class="kaspi-btn">
+        Buy on Kaspi
+      </a>
+      <button (click)="removeProduct()" class="remove-btn">
+        Remove
+      </button>
+    </div>
+    <div class="share-buttons">
+      <button (click)="shareOnWhatsApp()" class="share-btn whatsapp">
+        WhatsApp
+      </button>
+      <button (click)="shareOnTelegram()" class="share-btn telegram">
+        Telegram
+      </button>
+    </div>
+  </div>
+</div>

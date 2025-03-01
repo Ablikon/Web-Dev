@@ -1,1 +1,22 @@
-<app-products></app-products>
+<div class="app-container">
+  <header>
+    <h1>{{ title }}</h1>
+  </header>
+  
+  <div class="main-content">
+    <div class="categories-sidebar">
+      <h2>Categories</h2>
+      <ul class="category-list">
+        <li *ngFor="let category of categories" 
+            [class.active]="selectedCategory === category.name"
+            (click)="selectCategory(category.name)">
+          {{ category.name }}
+        </li>
+      </ul>
+    </div>
+    
+    <div class="products-container">
+      <app-product-list [categoryName]="selectedCategory"></app-product-list>
+    </div>
+  </div>
+</div>

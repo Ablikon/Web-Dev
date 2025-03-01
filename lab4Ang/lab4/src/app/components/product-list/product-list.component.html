@@ -1,0 +1,13 @@
+<div class="product-list-container">
+  <h2 *ngIf="categoryName">{{ categoryName }} Products</h2>
+  <div *ngIf="products.length === 0 && categoryName" class="no-products">
+    No products available in this category.
+  </div>
+  <div class="product-grid">
+    <app-product-item 
+      *ngFor="let product of products" 
+      [product]="product"
+      (remove)="removeProduct($event)">
+    </app-product-item>
+  </div>
+</div>

@@ -7,4 +7,5 @@ export interface Product {
   images: string[];
   kaspiLink: string;
   category: string;
+  likes: number;
 }
