@@ -1,0 +1,35 @@
+<div class="albums-container">
+  <h1>Мои Альбомы</h1>
+  
+  <div class="create-album-form">
+    <input 
+      type="text" 
+      placeholder="Введите название нового альбома" 
+      [(ngModel)]="newAlbumTitle" 
+      class="title-input"
+    >
+    <button class="create-btn" (click)="createAlbum()">Создать Альбом</button>
+  </div>
+  
+  <div class="loading" *ngIf="loading">
+    <div class="loading-spinner"></div>
+    <p>Загрузка альбомов...</p>
+  </div>
+  
+  <div class="error" *ngIf="error">
+    <p>{{ error }}</p>
+  </div>
+  
+  <div class="album-list" *ngIf="!loading && !error">
+    <div class="album-item" *ngFor="let album of albums" [routerLink]="['/albums', album.id]">
+      <div class="album-title">{{ album.title }}</div>
+      <div class="album-actions">
+        <button class="delete-btn" (click)="deleteAlbum(album.id, $event)">Удалить</button>
+      </div>
+    </div>
+    
+    <div *ngIf="albums.length === 0" class="no-albums">
+      <p>Альбомов пока нет. Создайте свой первый альбом!</p>
+    </div>
+  </div>
+</div>

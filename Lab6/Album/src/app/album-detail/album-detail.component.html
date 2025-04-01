@@ -1,0 +1,42 @@
+<div class="album-detail-container">
+  <div class="loading" *ngIf="loading">
+    <p>Loading album details...</p>
+  </div>
+  
+  <div class="error" *ngIf="error">
+    <p>{{ error }}</p>
+    <button class="back-btn" (click)="goBack()">Go Back</button>
+  </div>
+  
+  <div class="album-detail" *ngIf="album && !loading">
+    <h1>Album Details</h1>
+    
+    <div class="album-info">
+      <div class="info-item">
+        <span class="label">ID:</span>
+        <span class="value">{{ album.id }}</span>
+      </div>
+      
+      <div class="info-item">
+        <span class="label">User ID:</span>
+        <span class="value">{{ album.userId }}</span>
+      </div>
+      
+      <div class="title-edit">
+        <span class="label">Title:</span>
+        <input 
+          type="text" 
+          [(ngModel)]="editTitle" 
+          class="title-input" 
+          placeholder="Album title"
+        >
+        <button class="save-btn" (click)="saveAlbum()">Save</button>
+      </div>
+    </div>
+    
+    <div class="actions">
+      <button class="back-btn" (click)="goBack()">Return</button>
+      <a [routerLink]="['/albums', album.id, 'photos']" class="photos-link">Photos</a>
+    </div>
+  </div>
+</div>
