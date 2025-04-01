@@ -9302,7 +9302,7 @@ var __privateAdd = (obj, member, value) => {
   member instanceof WeakSet ? member.add(obj) : member.set(obj, value);
 };
 var _selectorCache;
-var removePseudoClassesAndElementsPattern = new RegExp("(?<!\\\\)::?[a-z-]+(?:\\(.+\\))?", "gi");
+var removePseudoClassesAndElementsPattern = /(?<!\\)::?[a-z-]+(?:\(.+\))?/gi;
 var removeTrailingCommasPattern = /\(\s*,|,\s*\)/g;
 var Beasties = class {
   constructor(options = {}) {
@@ -9579,7 +9579,7 @@ var Beasties = class {
     const shouldInlineFonts = options.fonts !== false && options.inlineFonts === true;
     walkStyleRules(ast, markOnly((rule2) => {
       if (rule2.type === "comment") {
-        const beastiesComment = rule2.text.match(new RegExp("^(?<!! )beasties:(.*)"));
+        const beastiesComment = rule2.text.match(/^(?<!! )beasties:(.*)/);
         const command = beastiesComment && beastiesComment[1];
         if (command) {
           switch (command) {
@@ -10150,7 +10150,7 @@ var RouteTree = class _RouteTree {
   }
 };
 var MODULE_PRELOAD_MAX = 10;
-var URL_PARAMETER_REGEXP = new RegExp("(?<!\\\\):([^/]+)", "g");
+var URL_PARAMETER_REGEXP = /(?<!\\):([^/]+)/g;
 var VALID_REDIRECT_RESPONSE_CODES = /* @__PURE__ */ new Set([301, 302, 303, 307, 308]);
 function traverseRoutesConfig(options) {
   return __asyncGenerator(this, null, function* () {
@@ -11534,4 +11534,4 @@ export {
   AngularAppEngine,
   createRequestHandler
 };
-//# sourceMappingURL=chunk-LC2BPIV6.js.map
+//# sourceMappingURL=chunk-PTKWDAZR.js.map
