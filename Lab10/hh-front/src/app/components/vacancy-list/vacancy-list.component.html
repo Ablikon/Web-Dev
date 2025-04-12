@@ -1,0 +1,63 @@
+<div class="container">
+  <div class="loading-container" *ngIf="loading">
+    <div class="loading-animation">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+    <p>Loading vacancies...</p>
+  </div>
+
+  <div *ngIf="!loading">
+    <div class="back-link">
+      <a routerLink="/companies">
+        <span class="back-icon">←</span>
+        <span>Back to Companies</span>
+      </a>
+    </div>
+    
+    <div class="company-profile card" *ngIf="company">
+      <div class="company-header">
+        <div class="company-avatar">{{ company.name[0] }}</div>
+        <div class="company-info">
+          <h2>{{ company.name }}</h2>
+          <div class="company-location">
+            <span class="location-icon">📍</span>
+            <span>{{ company.city }}, {{ company.address }}</span>
+          </div>
+        </div>
+      </div>
+      <div class="company-description">
+        <h3>About Company</h3>
+        <p>{{ company.description }}</p>
+      </div>
+    </div>
+
+    <div class="section-header">
+      <h3>Available Positions</h3>
+      <span class="badge badge-primary">{{ vacancies.length }} vacancies</span>
+    </div>
+
+    <div class="vacancies-grid" *ngIf="vacancies.length > 0">
+      <div class="vacancy-card card" *ngFor="let vacancy of vacancies">
+        <div class="vacancy-header">
+          <h3>{{ vacancy.name }}</h3>
+          <span class="salary">{{ vacancy.salary | currency }}</span>
+        </div>
+        <p class="vacancy-description">{{ vacancy.description }}</p>
+        <div class="vacancy-footer">
+          <span class="badge badge-secondary">Full-time</span>
+          <button class="btn">Apply Now</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="no-vacancies" *ngIf="vacancies.length === 0">
+      <div class="empty-state">
+        <div class="empty-icon">📝</div>
+        <h3>No Vacancies Available</h3>
+        <p>This company currently doesn't have any job openings</p>
+      </div>
+    </div>
+  </div>
+</div>

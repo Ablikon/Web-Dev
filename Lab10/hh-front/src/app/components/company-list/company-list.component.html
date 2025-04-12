@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="page-header">
+    <h2>Discover Companies</h2>
+    <p class="subtitle">Find the best companies to work with</p>
+  </div>
+  
+  <div class="loading-container" *ngIf="loading">
+    <div class="loading-animation">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+    <p>Finding great companies for you...</p>
+  </div>
+
+  <div class="company-list" *ngIf="!loading && companies.length > 0">
+    <div class="company-card card" *ngFor="let company of companies">
+      <div class="company-header">
+        <div class="company-avatar">{{ company.name[0] }}</div>
+        <h3>{{ company.name }}</h3>
+      </div>
+      <div class="company-location">
+        <span class="location-icon">📍</span>
+        <span>{{ company.city }}, {{ company.address }}</span>
+      </div>
+      <p class="company-description">{{ company.description }}</p>
+      <div class="company-footer">
+        <span class="badge badge-primary">Tech</span>
+        <a [routerLink]="['/companies', company.id, 'vacancies']" class="btn">View Vacancies</a>
+      </div>
+    </div>
+  </div>
+  
+  <div class="no-companies" *ngIf="!loading && companies.length === 0">
+    <div class="empty-state">
+      <div class="empty-icon">🏢</div>
+      <h3>No companies found</h3>
+      <p>We couldn't find any companies in our database</p>
+    </div>
+  </div>
+</div>
